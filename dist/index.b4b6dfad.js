@@ -28523,7 +28523,7 @@ const SignupView = ()=>{
             Email: email,
             Birthday: birthday
         };
-        fetch("https://myflixdb-movie-api.herokuapp.com/", {
+        fetch("https://myflixdb-movie-api.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

@@ -27246,7 +27246,7 @@ const MovieCard = ({ movie , onMovieClick  })=>{
         onClick: ()=>{
             onMovieClick(movie);
         },
-        children: movie.title
+        children: movie.Title
     }, void 0, false, {
         fileName: "src/components/movie-card/movie-card.jsx",
         lineNumber: 5,
@@ -28199,7 +28199,7 @@ const MovieView = ({ movie , onBackClick  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.image
+                    src: movie.ImageUrl
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 5,
@@ -28220,7 +28220,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.title
+                        children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 9,
@@ -28242,7 +28242,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.description
+                        children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 13,
@@ -28330,7 +28330,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.genre.Name
+                        children: movie.Genre.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 29,
@@ -28352,7 +28352,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.genre.Description
+                        children: movie.Genre.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 33,
@@ -28410,8 +28410,8 @@ const LoginView = ({ onLoggedIn  })=>{
         // this prevents the default behavior of the form which is to reload the entire page
         event.preventDefault();
         const data = {
-            access: username,
-            secret: password
+            Username: username,
+            Password: password
         };
         fetch("https://myflixdb-movie-api.herokuapp.com/login", {
             method: "POST",

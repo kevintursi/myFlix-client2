@@ -61,13 +61,9 @@ export const MainView = () => {
                         path="/profile"
                         element={
                             <>
-                                {user ? (
-                                    <Navigate to="/" />
-                                ) : (
-                                    <Col md={5}>
-                                        <ProfileView onLoggedIn={(user) => setUser(user)} />
-                                    </Col>
-                                )}
+                                <Col md={5}>
+                                    <ProfileView onLoggedIn={(user) => setUser(user)} />
+                                </Col>
                             </>
                         }
                     />

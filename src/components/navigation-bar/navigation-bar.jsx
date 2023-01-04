@@ -21,9 +21,10 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                     </Nav>
                     <Nav className="profile-view">
                         {user && (
-                            <Button variant="secondary" onClick={ProfileView}>
+                            <Link to="/profile"><Button variant="secondary">
                                 My Profile
                             </Button>
+                            </Link>
                         )}
                     </Nav>
                 </Navbar.Collapse>

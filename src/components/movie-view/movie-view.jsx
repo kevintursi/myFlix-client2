@@ -1,6 +1,13 @@
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "./movie-view.scss";
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+    const { movieId, handleFavorite } = useParams();
+
+    const movie = movies.find((m) => m._id === movieId);
+
     return (
         <div>
             <div>
@@ -34,13 +41,20 @@ export const MovieView = ({ movie, onBackClick }) => {
                 <span>Genre Description: </span>
                 <span>{movie.Genre.Description}</span>
             </div>
-            <button
-                onClick={onBackClick}
-                className="back-button"
-                style={{ cursor: "pointer" }}
-            >
-                Back
-            </button>
+            <Button
+                className="favorite-button mt-2"
+                variant="primary"
+                onClick={() => handleFavorite(movie._id, "add")}
+            >Add to Favorite Movies
+            </Button>
+            <Link to={`/`}>
+                <Button
+                    className="back-button"
+                    style={{ cursor: "pointer" }}
+                >
+                    Back
+                </Button>
+            </Link>
         </div>
     );
 };

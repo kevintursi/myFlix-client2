@@ -1,12 +1,23 @@
+import React from 'react';
+import { useState } from 'react';
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./movie-view.scss";
 
 export const MovieView = ({ movies }) => {
-    const { movieId, handleFavorite } = useParams();
+    const { movieId } = useParams();
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
 
-    const movie = movies.find((m) => m._id === movieId);
+    const handleFavorite = (movieId, action) => {
+        const movie = movies.find((movie) => movie._id === movieId);
+
+        if (action === "add") {
+            setFavoriteMovies([...favoriteMovies, movie]);
+        }
+    };
+
+    const movie = movies.find((movie) => movie._id === movieId);
 
     return (
         <div>
@@ -44,7 +55,7 @@ export const MovieView = ({ movies }) => {
             <Button
                 className="favorite-button mt-2"
                 variant="primary"
-                onClick={() => handleFavorite(movie._id, "add")}
+                onClick={() => handleFavorite(movieId, "add")}
             >Add to Favorite Movies
             </Button>
             <Link to={`/`}>

@@ -1,6 +1,6 @@
 import React from "react";
-// import axios from "axios";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 // // React Bootstrap Components
 import Form from "react-bootstrap/Form";
@@ -13,20 +13,13 @@ import { Figure } from "react-bootstrap";
 
 
 export const ProfileView = () => {
-    // constructor() {
-    //     super();
-    // this.state = {
-    //     Username: null,
-    //     Password: null,
-    //     Email: null,
-    //     Birthday: null,
-    //     FavoriteMovies: [],
-    // };
-    // }
-    // componentDidMount() {
-    //     // const accessToken = localStorage.getItem("token");
-    //     // this.getUser(accessToken);
-    // }
+    const navigate = useNavigate();
+    React.useEffect(() => {
+        const accessToken = localStorage.getItem("token");
+        if (accessToken) {
+            getUser(accessToken);
+        }
+    }, [])
 
     const [state, setState] = React.useState({
         Username: null,
@@ -36,7 +29,7 @@ export const ProfileView = () => {
         FavoriteMovies: [],
     });
 
-    onRemoveFavorite = (movie) => {
+    const onRemoveFavorite = (movie) => {
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
         console.log(movie)
@@ -48,7 +41,7 @@ export const ProfileView = () => {
             .then((response) => {
                 console.log(response);
                 alert("Movie was removed from your favorites.");
-                this.componentDidMount();
+                // this.componentDidMount();
             })
             .catch(function (error) {
                 console.log(error);
@@ -58,24 +51,26 @@ export const ProfileView = () => {
     const onLoggedOut = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
-        this.setState({
-            user: null,
+        setState({
+            ...state,
+            Username: null,
         });
-        window.open("/", "_self");
+        navigate("/");
     }
 
     const getUser = (token) => {
-        const Username = localStorage.getItem("user");
+        const Username = JSON.parse(localStorage.getItem("user")).Username;
         axios
             .get(`https://myflixdb-movie-api.herokuapp.com/users/${Username}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((response) => {
-                this.setState({
+                console.log("getUserResponse", response)
+                setState({
                     Username: response.data.Username,
                     Password: response.data.Password,
                     Email: response.data.Email,
-                    Birthday: response.Birthday,
+                    Birthday: response.data.Birthday,
                     FavoriteMovies: response.data.FavoriteMovies,
                 });
             })
@@ -86,16 +81,16 @@ export const ProfileView = () => {
 
     const editUser = (e) => {
         e.preventDefault();
-        const Username = localStorage.getItem("user");
+        const Username = JSON.parse(localStorage.getItem("user")).Username;
         const token = localStorage.getItem("token");
         axios
             .put(
                 `https://myflixdb-movie-api.herokuapp.com/users/${Username}`,
                 {
-                    Username: this.state.Username,
-                    Password: this.state.Password,
-                    Email: this.state.Email,
-                    Birthday: this.state.Birthday,
+                    Username: state.Username,
+                    Password: state.Password,
+                    Email: state.Email,
+                    Birthday: state.Birthday,
                 },
                 {
                     headers: { Authorization: `Bearer ${token}` },
@@ -103,19 +98,21 @@ export const ProfileView = () => {
             )
             .then((response) => {
                 console.log(response)
-                this.setState({
+                setState({
+                    ...state,
                     Username: response.data.Username,
                     Password: response.data.Password,
                     Email: response.data.Email,
                     Birthday: response.data.Birthday,
                 });
 
-                localStorage.setItem("user", this.state.Username);
+                localStorage.setItem("user", JSON.stringify(response.data));
                 const data = response.data;
                 console.log(data);
-                console.log(this.state.Username);
+                console.log(state.Username);
                 alert("Profile is updated!");
-                window.open(`/users/${Username}`, "_self");
+                getUser();
+                // window.open(`/users/${Username}`, "_self");
             })
             .catch(function (error) {
                 console.error(error);
@@ -145,38 +142,42 @@ export const ProfileView = () => {
 
     // Set user values
     const setUsername = (value) => {
-        this.setState({
+        setState({
+            ...state,
             Username: value,
         });
-        this.Username = value;
+        // this.Username = value;
     }
 
     const setPassword = (value) => {
-        this.setState({
+        setState({
+            ...state,
             Password: value,
         });
-        this.Password = value;
+        // this.Password = value;
     }
 
     const setEmail = (value) => {
-        this.setState({
+        setState({
+            ...state,
             Email: value,
         });
-        this.Email = value;
+        // this.Email = value;
     }
 
     const setBirthday = (value) => {
-        console.warn("setBirthday", value);
-        this.setState({
+        // console.warn("setBirthday", value);
+        setState({
+            ...state,
             Birthday: value,
         });
-        this.Birthday = value;
+        // this.Birthday = value;
     }
 
     // render() {
     // const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
 
-    const myFavoritesMovies = [];
+    // const myFavoritesMovies = [];
     // for (let i = 0; i < movies.length; i++) {
     //     const movie = movies[i];
     //     if (FavoriteMovies.includes(movie._id)) {
@@ -207,15 +208,8 @@ export const ProfileView = () => {
                             <Card.Text>
                                 <Form
                                     className="update-form"
-                                    onSubmit={(e) =>
-                                        this.editUser(
-                                            e,
-                                            this.Username,
-                                            this.Password,
-                                            this.Email,
-                                            this.Birthday
-                                        )
-                                    }
+                                    onSubmit={editUser}
+
                                 >
                                     <Form.Group>
                                         <Form.Label>Username</Form.Label>
@@ -223,7 +217,7 @@ export const ProfileView = () => {
                                             type="text"
                                             name="Username"
                                             placeholder="New Username"
-                                            onChange={(e) => this.setUsername(e.target.value)}
+                                            onChange={(e) => setUsername(e.target.value)}
                                             required
                                         />
                                     </Form.Group>
@@ -233,7 +227,7 @@ export const ProfileView = () => {
                                             type="password"
                                             name="Password"
                                             placeholder="New Password"
-                                            onChange={(e) => this.setPassword(e.target.value)}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
                                     </Form.Group>
@@ -243,7 +237,7 @@ export const ProfileView = () => {
                                             type="email"
                                             name="Email"
                                             placeholder="New Email"
-                                            onChange={(e) => this.setEmail(e.target.value)}
+                                            onChange={(e) => setEmail(e.target.value)}
                                             required
                                         />
                                     </Form.Group>
@@ -252,21 +246,21 @@ export const ProfileView = () => {
                                         <Form.Control
                                             type="date"
                                             name="Birthday"
-                                            onChange={(e) => this.setBirthday(e.target.value)}
+                                            onChange={(e) => setBirthday(e.target.value)}
                                         />
                                     </Form.Group>
                                     <Form.Group>
                                         <Button
                                             variant="warning"
                                             type="submit"
-                                            onClick={(e) => this.editUser(e)}
                                         >
                                             Update User
                                         </Button>
                                         <Button
                                             className="delete-button"
                                             variant="danger"
-                                            onClick={() => this.onDeleteUser()}
+                                            type="button"
+                                            onClick={onDeleteUser}
                                         >
                                             Delete User
                                         </Button>
@@ -285,7 +279,7 @@ export const ProfileView = () => {
                         </Col>
                     </Row>
                     <Row>
-                        {myFavoritesMovies.map((movie) => (
+                        {state.FavoriteMovies.map((movie) => (
                             <Col key={movie._id} className="favorite-movies">
                                 <Figure>
                                     <Link to={`/movies/${movie._id}`}>
@@ -296,7 +290,7 @@ export const ProfileView = () => {
                                 <Button
                                     className="remove"
                                     variant="secondary"
-                                    onClick={() => { this.onRemoveFavorite(movie._id) }}
+                                    onClick={() => onRemoveFavorite(movie._id)}
                                 >
                                     Remove from the list
                                 </Button>

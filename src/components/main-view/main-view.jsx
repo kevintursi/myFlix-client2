@@ -11,12 +11,21 @@ import { ProfileView } from "../profile-view/profile-view";
 import "./main-view.scss";
 
 export const MainView = () => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    const storedToken = localStorage.getItem("token");
-    const [user, setUser] = useState(storedUser ? storedUser : null);
-    const [token, setToken] = useState(storedToken ? storedToken : null);
+
+    const [user, setUser] = useState(null);
+    const [token, setToken] = useState(null);
     const [movies, setMovies] = useState([]);
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        const storedToken = localStorage.getItem("token");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+        if (storedToken) {
+            setToken(storedToken);
+        }
+    }, [])
 
     useEffect(() => {
         if (!token) return;

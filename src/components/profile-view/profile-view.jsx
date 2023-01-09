@@ -17,7 +17,9 @@ export const ProfileView = () => {
     React.useEffect(() => {
         const accessToken = localStorage.getItem("token");
         if (accessToken) {
-            getUser(accessToken);
+            getUser();
+        } else {
+            navigate("/login");
         }
     }, [])
 
@@ -30,18 +32,18 @@ export const ProfileView = () => {
     });
 
     const onRemoveFavorite = (movie) => {
-        const username = localStorage.getItem("user");
+        const Username = JSON.parse(localStorage.getItem("user")).Username;
         const token = localStorage.getItem("token");
         console.log(movie)
         axios
             .delete(
-                `https://myflixdb-movie-api.herokuapp.com/users/${username}/movies/${movie}`,
+                `https://myflixdb-movie-api.herokuapp.com/users/${Username}/movies/${movie}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             )
             .then((response) => {
                 console.log(response);
                 alert("Movie was removed from your favorites.");
-                // this.componentDidMount();
+                getUser();
             })
             .catch(function (error) {
                 console.log(error);
@@ -58,8 +60,9 @@ export const ProfileView = () => {
         navigate("/");
     }
 
-    const getUser = (token) => {
+    const getUser = () => {
         const Username = JSON.parse(localStorage.getItem("user")).Username;
+        const token = localStorage.getItem("token");
         axios
             .get(`https://myflixdb-movie-api.herokuapp.com/users/${Username}`, {
                 headers: { Authorization: `Bearer ${token}` },
@@ -121,7 +124,7 @@ export const ProfileView = () => {
 
     // Deregister
     const onDeleteUser = () => {
-        const Username = localStorage.getItem("user");
+        const Username = JSON.parse(localStorage.getItem("user")).Username;
         const token = localStorage.getItem("token");
 
         axios
@@ -283,7 +286,7 @@ export const ProfileView = () => {
                             <Col key={movie._id} className="favorite-movies">
                                 <Figure>
                                     <Link to={`/movies/${movie._id}`}>
-                                        <Figure.Image src={movie.ImagePath} alt={movie.Title} />
+                                        <Figure.Image src={movie.ImageUrl} alt={movie.Title} />
                                         <Figure.Caption>{movie.Title}</Figure.Caption>
                                     </Link>
                                 </Figure>

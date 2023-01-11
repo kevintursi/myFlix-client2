@@ -1,6 +1,43 @@
+import React from 'react';
+import { useState } from 'react';
+import { useParams } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "./movie-view.scss";
+import axios from 'axios';
 
-export const MovieView = ({ movie, onBackClick }) => {
+export const MovieView = ({ movies }) => {
+    const { movieId } = useParams();
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
+    const navigate = useNavigate();
+
+    const handleFavorite = () => {
+        const Username = JSON.parse(localStorage.getItem("user")).Username;
+        const token = localStorage.getItem("token");
+        axios
+            .post(
+                `https://myflixdb-movie-api.herokuapp.com/users/${Username}/movies/${movieId}`,
+                null,
+                {
+                    headers: { Authorization: `Bearer ${token}` },
+                }
+            )
+            .then((response) => {
+                console.log(response)
+                navigate("/")
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+
+
+        //     if (action === "add") {
+        //         setFavoriteMovies([...favoriteMovies, movie]);
+        //     }
+    };
+
+    const movie = movies.find((movie) => movie._id === movieId);
+
     return (
         <div>
             <div>
@@ -34,13 +71,20 @@ export const MovieView = ({ movie, onBackClick }) => {
                 <span>Genre Description: </span>
                 <span>{movie.Genre.Description}</span>
             </div>
-            <button
-                onClick={onBackClick}
-                className="back-button"
-                style={{ cursor: "pointer" }}
-            >
-                Back
-            </button>
+            <Button
+                className="favorite-button mt-2"
+                variant="primary"
+                onClick={() => handleFavorite()}
+            >Add to Favorite Movies
+            </Button>
+            <Link to={`/`}>
+                <Button
+                    className="back-button"
+                    style={{ cursor: "pointer" }}
+                >
+                    Back
+                </Button>
+            </Link>
         </div>
     );
 };

@@ -9,21 +9,30 @@ import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
+import { useDispatch, useSelector } from "react-redux";
+import { updateMovies, updateToken, updateUser } from "../../actions/actions";
 import "./main-view.scss";
 
 export const MainView = () => {
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
-    const [movies, setMovies] = useState([]);
+    // const [movies, setMovies] = useState([]);
+
+    const dispatch = useDispatch();
+    const movies = useSelector((state) => state.movies);
+    // const userFromStore = useSelector((state) => state.user);
+    // const tokenFromStore = useSelector((state) => state.token);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
         const storedToken = localStorage.getItem("token");
         if (storedUser) {
             setUser(JSON.parse(storedUser));
+            // dispatch(updateUser(JSON.parse(storedUser)));
         }
         if (storedToken) {
             setToken(storedToken);
+            // dispatch(updateToken(storedToken));
         }
     }, [])
 
@@ -35,7 +44,8 @@ export const MainView = () => {
         })
             .then((response) => response.json())
             .then((movies) => {
-                setMovies(movies);
+                // setMovies(movies);
+                dispatch(updateMovies(movies));
             });
     }, [token]);
 

@@ -1,22 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Col } from 'react-bootstrap';
+import { Col, FormControl } from 'react-bootstrap';
 import { MovieCard } from '../movie-card/movie-card';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilter } from '../../actions/actions';
 
-export const HomeView = ({ user, token }) => {
-    const [movies, setMovies] = useState([]);
-    useEffect(() => {
-        if (!token) return;
+export const HomeView = ({ user }) => {
+    const movies = useSelector((state) => state.movies);
+    const filter = useSelector((state) => state.filter);
+    const dispatch = useDispatch();
+    const handleChange = (e) => {
+        dispatch(setFilter(e.target.value));
+    }
 
-        fetch("https://myflixdb-movie-api.herokuapp.com/movies", {
-            headers: { Authorization: `Bearer ${token}` },
-        })
-            .then((response) => response.json())
-            .then((movies) => {
-                setMovies(movies);
-
-            });
-    }, [token]);
+    const filteredMovies = movies.filter((movie) => movie.Title.toLowerCase().includes(filter.toLowerCase()));
 
     return (
         <>
@@ -26,7 +23,13 @@ export const HomeView = ({ user, token }) => {
                 <Col>The list is empty!</Col>
             ) : (
                 <>
-                    {movies.map((movie) => (
+                    <FormControl
+                        className='py-3 my-3 w-60'
+                        value={filter}
+                        onChange={handleChange}
+                        placeholder='Search by Title...'
+                    />
+                    {filteredMovies.map((movie) => (
                         <Col className="mb-4" key={movie._id} md={3}>
                             <MovieCard movie={movie} />
                         </Col>

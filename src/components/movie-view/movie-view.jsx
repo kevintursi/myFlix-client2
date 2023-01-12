@@ -29,11 +29,6 @@ export const MovieView = ({ movies }) => {
             .catch(function (error) {
                 console.error(error);
             });
-
-
-        //     if (action === "add") {
-        //         setFavoriteMovies([...favoriteMovies, movie]);
-        //     }
     };
 
     const movie = movies.find((movie) => movie._id === movieId);

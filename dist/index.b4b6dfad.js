@@ -50164,7 +50164,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"jwXES","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1dHuo","react-redux":"bdVon","../../actions/actions":"biFwH","react-router":"dbWyW","react-router-dom":"9xmpe"}],"bdVon":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"jwXES","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1dHuo","react-redux":"bdVon","react-router":"dbWyW","../../actions/actions":"biFwH","react-router-dom":"9xmpe"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
 // Because of that, the useSyncExternalStore compat shim is needed.

@@ -115,7 +115,6 @@ export const ProfileView = () => {
                 console.log(state.Username);
                 alert("Profile is updated!");
                 getUser();
-                // window.open(`/users/${Username}`, "_self");
             })
             .catch(function (error) {
                 console.error(error);

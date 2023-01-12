@@ -34302,9 +34302,6 @@ const MovieView = ({ movies  })=>{
         }).catch(function(error) {
             console.error(error);
         });
-    //     if (action === "add") {
-    //         setFavoriteMovies([...favoriteMovies, movie]);
-    //     }
     };
     const movie = movies.find((movie)=>movie._id === movieId);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34314,12 +34311,12 @@ const MovieView = ({ movies  })=>{
                     src: movie.ImageUrl
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 44,
+                    lineNumber: 39,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 43,
+                lineNumber: 38,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34328,20 +34325,20 @@ const MovieView = ({ movies  })=>{
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 48,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 46,
+                lineNumber: 41,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34350,20 +34347,20 @@ const MovieView = ({ movies  })=>{
                         children: "Description: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 51,
+                        lineNumber: 46,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 50,
+                lineNumber: 45,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34372,20 +34369,20 @@ const MovieView = ({ movies  })=>{
                         children: "Director: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 55,
+                        lineNumber: 50,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Director.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 56,
+                        lineNumber: 51,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 54,
+                lineNumber: 49,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34394,20 +34391,20 @@ const MovieView = ({ movies  })=>{
                         children: "Director's Bio: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 59,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Director.Bio
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 60,
+                        lineNumber: 55,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 58,
+                lineNumber: 53,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34416,20 +34413,20 @@ const MovieView = ({ movies  })=>{
                         children: "Director's Birth Year: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 63,
+                        lineNumber: 58,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Director.Birth
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 64,
+                        lineNumber: 59,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 62,
+                lineNumber: 57,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34438,20 +34435,20 @@ const MovieView = ({ movies  })=>{
                         children: "Genre: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 67,
+                        lineNumber: 62,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Genre.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 68,
+                        lineNumber: 63,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 66,
+                lineNumber: 61,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34460,20 +34457,20 @@ const MovieView = ({ movies  })=>{
                         children: "Genre Description: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 71,
+                        lineNumber: 66,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.Genre.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 72,
+                        lineNumber: 67,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 70,
+                lineNumber: 65,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -34483,7 +34480,7 @@ const MovieView = ({ movies  })=>{
                 children: "Add to Favorite Movies"
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 74,
+                lineNumber: 69,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -34496,18 +34493,18 @@ const MovieView = ({ movies  })=>{
                     children: "Back"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 81,
+                    lineNumber: 76,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 80,
+                lineNumber: 75,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-view/movie-view.jsx",
-        lineNumber: 42,
+        lineNumber: 37,
         columnNumber: 9
     }, undefined);
 };
@@ -52270,40 +52267,25 @@ const ProfileView = ()=>{
             ...state,
             Username: value
         });
-    // this.Username = value;
     };
     const setPassword = (value)=>{
         setState({
             ...state,
             Password: value
         });
-    // this.Password = value;
     };
     const setEmail = (value)=>{
         setState({
             ...state,
             Email: value
         });
-    // this.Email = value;
     };
     const setBirthday = (value)=>{
-        // console.warn("setBirthday", value);
         setState({
             ...state,
             Birthday: value
         });
-    // this.Birthday = value;
     };
-    // render() {
-    // const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
-    // const myFavoritesMovies = [];
-    // for (let i = 0; i < movies.length; i++) {
-    //     const movie = movies[i];
-    //     if (FavoriteMovies.includes(movie._id)) {
-    //         myFavoritesMovies.push(movie);
-    //     }
-    // }
-    // return <>Hello</>
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -52316,7 +52298,11 @@ const ProfileView = ()=>{
                                     children: "Your Profile"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 196,
+=======
+                                    lineNumber: 179,
+>>>>>>> Stashed changes
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
@@ -52329,7 +52315,11 @@ const ProfileView = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                 lineNumber: 199,
+=======
+                                                lineNumber: 182,
+>>>>>>> Stashed changes
                                                 columnNumber: 33
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -52339,7 +52329,11 @@ const ProfileView = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                 lineNumber: 200,
+=======
+                                                lineNumber: 183,
+>>>>>>> Stashed changes
                                                 columnNumber: 33
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -52349,25 +52343,41 @@ const ProfileView = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                 lineNumber: 201,
+=======
+                                                lineNumber: 184,
+>>>>>>> Stashed changes
                                                 columnNumber: 33
                                             }, undefined)
                                         ]
                                     }, void 0, true)
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 197,
+=======
+                                    lineNumber: 180,
+>>>>>>> Stashed changes
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                             lineNumber: 195,
+=======
+                            lineNumber: 178,
+>>>>>>> Stashed changes
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                         lineNumber: 194,
+=======
+                        lineNumber: 177,
+>>>>>>> Stashed changes
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -52378,7 +52388,11 @@ const ProfileView = ()=>{
                                     children: "Update Your Profile"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 208,
+=======
+                                    lineNumber: 191,
+>>>>>>> Stashed changes
                                     columnNumber: 25
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
@@ -52393,7 +52407,11 @@ const ProfileView = ()=>{
                                                             children: "Username"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 217,
+=======
+                                                            lineNumber: 200,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -52404,13 +52422,21 @@ const ProfileView = ()=>{
                                                             required: true
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 218,
+=======
+                                                            lineNumber: 201,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 216,
+=======
+                                                    lineNumber: 199,
+>>>>>>> Stashed changes
                                                     columnNumber: 37
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -52419,7 +52445,11 @@ const ProfileView = ()=>{
                                                             children: "Password"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 227,
+=======
+                                                            lineNumber: 210,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -52430,13 +52460,21 @@ const ProfileView = ()=>{
                                                             required: true
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 228,
+=======
+                                                            lineNumber: 211,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 226,
+=======
+                                                    lineNumber: 209,
+>>>>>>> Stashed changes
                                                     columnNumber: 37
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -52445,7 +52483,11 @@ const ProfileView = ()=>{
                                                             children: "Email"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 237,
+=======
+                                                            lineNumber: 220,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -52456,13 +52498,21 @@ const ProfileView = ()=>{
                                                             required: true
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 238,
+=======
+                                                            lineNumber: 221,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 236,
+=======
+                                                    lineNumber: 219,
+>>>>>>> Stashed changes
                                                     columnNumber: 37
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -52471,7 +52521,11 @@ const ProfileView = ()=>{
                                                             children: "Birthday"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 247,
+=======
+                                                            lineNumber: 230,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -52480,13 +52534,21 @@ const ProfileView = ()=>{
                                                             onChange: (e)=>setBirthday(e.target.value)
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 248,
+=======
+                                                            lineNumber: 231,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 246,
+=======
+                                                    lineNumber: 229,
+>>>>>>> Stashed changes
                                                     columnNumber: 37
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -52497,7 +52559,11 @@ const ProfileView = ()=>{
                                                             children: "Update User"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 255,
+=======
+                                                            lineNumber: 238,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -52508,46 +52574,78 @@ const ProfileView = ()=>{
                                                             children: "Delete User"
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                             lineNumber: 261,
+=======
+                                                            lineNumber: 244,
+>>>>>>> Stashed changes
                                                             columnNumber: 41
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                     lineNumber: 254,
+=======
+                                                    lineNumber: 237,
+>>>>>>> Stashed changes
                                                     columnNumber: 37
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                             lineNumber: 211,
+=======
+                                            lineNumber: 194,
+>>>>>>> Stashed changes
                                             columnNumber: 33
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                         lineNumber: 210,
+=======
+                                        lineNumber: 193,
+>>>>>>> Stashed changes
                                         columnNumber: 29
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 209,
+=======
+                                    lineNumber: 192,
+>>>>>>> Stashed changes
                                     columnNumber: 25
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                             lineNumber: 207,
+=======
+                            lineNumber: 190,
+>>>>>>> Stashed changes
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                         lineNumber: 206,
+=======
+                        lineNumber: 189,
+>>>>>>> Stashed changes
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                 lineNumber: 193,
+=======
+                lineNumber: 176,
+>>>>>>> Stashed changes
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
@@ -52561,17 +52659,29 @@ const ProfileView = ()=>{
                                     children: "Favorite Movies"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 280,
+=======
+                                    lineNumber: 263,
+>>>>>>> Stashed changes
                                     columnNumber: 29
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                 lineNumber: 279,
+=======
+                                lineNumber: 262,
+>>>>>>> Stashed changes
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                             lineNumber: 278,
+=======
+                            lineNumber: 261,
+>>>>>>> Stashed changes
                             columnNumber: 21
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -52587,25 +52697,41 @@ const ProfileView = ()=>{
                                                         alt: movie.Title
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                         lineNumber: 288,
+=======
+                                                        lineNumber: 271,
+>>>>>>> Stashed changes
                                                         columnNumber: 41
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Figure).Caption, {
                                                         children: movie.Title
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                         lineNumber: 289,
+=======
+                                                        lineNumber: 272,
+>>>>>>> Stashed changes
                                                         columnNumber: 41
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                                 lineNumber: 287,
+=======
+                                                lineNumber: 270,
+>>>>>>> Stashed changes
                                                 columnNumber: 37
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                             lineNumber: 286,
+=======
+                                            lineNumber: 269,
+>>>>>>> Stashed changes
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -52615,35 +52741,59 @@ const ProfileView = ()=>{
                                             children: "Remove from the list"
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                             lineNumber: 292,
+=======
+                                            lineNumber: 275,
+>>>>>>> Stashed changes
                                             columnNumber: 33
                                         }, undefined)
                                     ]
                                 }, movie._id, true, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                                     lineNumber: 285,
+=======
+                                    lineNumber: 268,
+>>>>>>> Stashed changes
                                     columnNumber: 29
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                             lineNumber: 283,
+=======
+                            lineNumber: 266,
+>>>>>>> Stashed changes
                             columnNumber: 21
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                     lineNumber: 277,
+=======
+                    lineNumber: 260,
+>>>>>>> Stashed changes
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
                 lineNumber: 276,
+=======
+                lineNumber: 259,
+>>>>>>> Stashed changes
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/profile-view.jsx",
+<<<<<<< Updated upstream
         lineNumber: 192,
+=======
+        lineNumber: 175,
+>>>>>>> Stashed changes
         columnNumber: 9
     }, undefined);
 };

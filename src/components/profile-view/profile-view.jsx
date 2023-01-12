@@ -148,7 +148,6 @@ export const ProfileView = () => {
             ...state,
             Username: value,
         });
-        // this.Username = value;
     }
 
     const setPassword = (value) => {
@@ -156,7 +155,6 @@ export const ProfileView = () => {
             ...state,
             Password: value,
         });
-        // this.Password = value;
     }
 
     const setEmail = (value) => {
@@ -164,30 +162,15 @@ export const ProfileView = () => {
             ...state,
             Email: value,
         });
-        // this.Email = value;
     }
 
     const setBirthday = (value) => {
-        // console.warn("setBirthday", value);
         setState({
             ...state,
             Birthday: value,
         });
-        // this.Birthday = value;
     }
 
-    // render() {
-    // const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
-
-    // const myFavoritesMovies = [];
-    // for (let i = 0; i < movies.length; i++) {
-    //     const movie = movies[i];
-    //     if (FavoriteMovies.includes(movie._id)) {
-    //         myFavoritesMovies.push(movie);
-    //     }
-    // }
-
-    // return <>Hello</>
     return (
         <Container>
             <Row>
